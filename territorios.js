@@ -1,168 +1,102 @@
-
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, Pressable, View } from 'react-native';
-import { Modal, ScrollView } from 'react-native-web';
-import { Button,Image } from 'react-native-web';
-import { useState } from 'react';
+import { StyleSheet, Text, View, Image } from 'react-native';
+import { Pressable, TextInput } from 'react-native-web';
 
 export default function App() {
-  
-const [animal,setAnimal] = useState([
-  {
-  imagem:'https://global-uploads.webflow.com/62f27b69eafac54f0255bab4/646c690ec939a9d01739491c_Cronus.jpg',
-  nome:'Nome: Animal1',
-  descrição:'Animal qualquer',
-  habitos:'Hábitos: ',
-  reproducao:'Reprodução: ',
-  conservacao:'Conservação: '
-  },
-  {
-  imagem:'https://global-uploads.webflow.com/62f27b69eafac54f0255bab4/646c690ec939a9d01739491c_Cronus.jpg',
-  nome:'Nome: Animal2',
-  descrição:'Animal qualquer',
-  habitos:'Hábitos: ',
-  reproducao:'Reprodução: ',
-  conservacao:'Conservação: '
-  },
-  {
-  imagem:'https://global-uploads.webflow.com/62f27b69eafac54f0255bab4/646c690ec939a9d01739491c_Cronus.jpg',
-  nome:'Nome: Animal3',
-  descrição:'Animal qualquer',
-  habitos:'Hábitos: ',
-  reproducao:'Reprodução: ',
-  conservacao:'Conservação: '
-  },
-  {
-  imagem:'https://global-uploads.webflow.com/62f27b69eafac54f0255bab4/646c690ec939a9d01739491c_Cronus.jpg',
-  nome:'Nome: Animal4',
-  descrição:'Animal qualquer'
-  },
-  {
-  imagem:'https://global-uploads.webflow.com/62f27b69eafac54f0255bab4/646c690ec939a9d01739491c_Cronus.jpg',
-  nome:'Nome: Animal5',
-  descrição:'Animal qualquer',
-  habitos:'Hábitos: ',
-reproducao:'Reprodução: ',
-conservacao:'Conservação: '
-  },
-  {
-  imagem:'https://global-uploads.webflow.com/62f27b69eafac54f0255bab4/646c690ec939a9d01739491c_Cronus.jpg',
-  nome:'Nome: Animal6',
-  descrição:'Animal qualquer',
-  habitos:'Hábitos: ',
-  reproducao:'Reprodução: ',
-  conservacao:'Conservação: '
-  }
-  ])
-
-  const[visivel, setVisivel] = useState(false);
-  const[indiceSelecionado, setIndiceSelecionado] = useState(0)
-  const carregar = (indice) => {
-    setIndiceSelecionado(indice);
-    setVisivel(true)
-  };
-  const voltar = () =>{
-    setVisivel(false);
-  };
-
   return (
-    <View style={(styles.container)} >
-      <StatusBar style="auto" />
+    <View style={styles.container}>
       <View style={styles.header}>
         <Text>Cabeçalho</Text>
       </View>
-      <View style={styles.botaoArea}>
-        <Pressable style={styles.botao} onPress={() => carregar (0)}>
-          <Text style={styles.nome}>Animal 1</Text>
-        </Pressable>
-      </View>
-      <View style={styles.botaoArea}>
-      <Pressable style={styles.botao} onPress={() => carregar (1)}>
-          <Text style={styles.nome}>Animal 2</Text>
-        </Pressable>
-      </View>
-      <View style={styles.botaoArea}>
-      <Pressable style={styles.botao} onPress={() => carregar (2)}>
-          <Text style={styles.nome}>Animal 3</Text>
-        </Pressable>
-      </View>
-      <View style={styles.botaoArea}>
-      <Pressable style={styles.botao} onPress={() => carregar (3)}>
-          <Text style={styles.nome}>Animal 4</Text>
-        </Pressable>
-      </View>
-      <View style={styles.botaoArea}>
-      <Pressable style={styles.botao} onPress={() => carregar (4)}>
-          <Text style={styles.nome}>Animal 5</Text>
-        </Pressable>
-      </View>
-      <View style={styles.botaoArea}>
-      <Pressable style={styles.botao} onPress={() => carregar (5)}>
-          <Text style={styles.nome}>Animal 6</Text>
-        </Pressable>
-      </View>
-      
-      <Modal visible={visivel} animationType="fade">
-        <View style={styles.modal}>
-          <Image style={styles.image} 
-          source={{uri:animal[indiceSelecionado].imagem}}/>
-          <Text style={styles.animal}>{animal[indiceSelecionado].nome}</Text>
-          <Text style={styles.animal}>{animal[indiceSelecionado].descrição}</Text>
-          <Text style={styles.animal}>{animal[indiceSelecionado].habitos}</Text>
-          <Text style={styles.animal}>{animal[indiceSelecionado].reproducao}</Text>
-          <Text style={styles.animal}>{animal[indiceSelecionado].conservacao}</Text>
-          <Button title="Voltar" onPress={() => voltar()}/>
-          <Image source={require} style={{width:50, height:50}}/>
+
+      <View style={styles.territorioArea}>
+        <View style={styles.buttonArea}>
+            <Pressable style={styles.territorio}>
+              <Image style={{width:'100%',height:'90%'}}
+              source={{uri:'https://static.escolakids.uol.com.br/2021/01/varios-animais-aafricanos.jpg'}} />
+              <Text>Mamiferos</Text>
+            </Pressable>
+          </View>
+
+        <View style={styles.buttonArea}>
+          <Pressable style={styles.territorio}>
+          <Image style={{width:'100%',height:'90%'}}
+              source={{uri:'https://ambientes.ambientebrasil.com.br/wp-content/uploads/2020/12/mix_imagens_aves.jpg'}} />
+          <Text>Aves</Text>
+          </Pressable>
         </View>
-      </Modal>
-</View>
+      </View>
+
+      <View style={styles.territorioArea}>
+        <View style={styles.buttonArea}>
+            <Pressable style={styles.territorio}>
+            <Image style={{width:'100%',height:'90%'}}
+              source={{uri:'https://petanjo.com/blog/wp-content/uploads/2023/07/repteis.jpg'}} />
+            <Text>Répteis</Text>
+            </Pressable>
+          </View>
+          
+        <View style={styles.buttonArea}>
+          <Pressable style={styles.territorio}>
+          <Image style={{width:'100%',height:'90%'}}
+              source={{uri:'https://static7.depositphotos.com/1003722/678/v/450/depositphotos_6785938-stock-illustration-set-of-reptiles-and-amphibians.jpg'}} />
+          <Text>Anfibios</Text>
+          </Pressable>
+        </View>
+      </View>
+
+      <View style={styles.territorioArea}>
+        <View style={styles.buttonArea}>
+            <Pressable style={styles.territorio}>
+            <Image style={{width:'100%',height:'90%'}}
+              source={{uri:'https://4.bp.blogspot.com/-KrRWINYSgjw/VDQlHrr6nbI/AAAAAAAAAYQ/Ks3zf3rlbjQ/s1600/material-vetor-de-peixes_15-1163.jpg'}} />
+            <Text>Peixes</Text>
+            </Pressable>
+          </View>
+          
+        <View style={styles.buttonArea}>
+          <Pressable style={styles.territorio}>
+          <Image style={{width:'100%',height:'90%'}}
+              source={{uri:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkQzhbSeBrkaYOWmxEKz_fD4tILa55UW6tLKfcTEaLbSsvBNxMqqUylcRDplVKLkq-Cu0&usqp=CAU'}} />
+          <Text>Outros</Text>
+          </Pressable>
+        </View>
+      </View>
+
+      <StatusBar style="auto" />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#828282',
-    justifyContent:'center',
-    alignItens:'center'
+    backgroundColor: 'gray',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  botaoArea:{
+  territorioArea:{
     flex:1,
+    flexDirection:'row',
+    height:'100%',
+    width:'85%',
+    margin:10,
+  },
+  buttonArea:{
+    width:'50%',
+    height:'100%',
+    borderWidth:1,
+    marginLeft:'0.5%',
+    marginRight:'1%'
+  },
+  territorio:{
     width:'100%',
     height:'100%',
     alignItems:'center',
     justifyContent:'center',
-    
-  },
-  botao:{
-    width:'95%',
-    height:'85%',
-    borderRadius:25,
-    justifyContent:'center',
-    backgroundColor:'#545454'
   },
   header:{
-    flex:0.5,
-  },
-  nome:{
-    textAlign:'center'
-  },
-  modal:{
-    margin:'5%',
-    alignSelf:'center',
-    justifyContent:'center',
-    width:'95%',
-    height:'95%',
-    backgroundColor:'#828282'
-  },
-  animal:{
-    height:'100%'
-  },
-  image:{
-    width:'80%',
-    height:'50%',
-    alignSelf:'center',
-    margin:'5%'
+    flex:0.5
   }
 
 });
