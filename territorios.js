@@ -9,7 +9,7 @@ export default function App() {
   
 const [animal,setAnimal] = useState([
   {
-
+  imagem:'https://global-uploads.webflow.com/62f27b69eafac54f0255bab4/646c690ec939a9d01739491c_Cronus.jpg',
   nome:'Nome: Animal1',
   descrição:'Animal qualquer',
   habitos:'Hábitos: ',
@@ -17,7 +17,7 @@ const [animal,setAnimal] = useState([
   conservacao:'Conservação: '
   },
   {
-
+  imagem:'https://global-uploads.webflow.com/62f27b69eafac54f0255bab4/646c690ec939a9d01739491c_Cronus.jpg',
   nome:'Nome: Animal2',
   descrição:'Animal qualquer',
   habitos:'Hábitos: ',
@@ -25,7 +25,7 @@ const [animal,setAnimal] = useState([
   conservacao:'Conservação: '
   },
   {
-
+  imagem:'https://global-uploads.webflow.com/62f27b69eafac54f0255bab4/646c690ec939a9d01739491c_Cronus.jpg',
   nome:'Nome: Animal3',
   descrição:'Animal qualquer',
   habitos:'Hábitos: ',
@@ -33,18 +33,20 @@ const [animal,setAnimal] = useState([
   conservacao:'Conservação: '
   },
   {
+  imagem:'https://global-uploads.webflow.com/62f27b69eafac54f0255bab4/646c690ec939a9d01739491c_Cronus.jpg',
   nome:'Nome: Animal4',
   descrição:'Animal qualquer'
   },
   {
+  imagem:'https://global-uploads.webflow.com/62f27b69eafac54f0255bab4/646c690ec939a9d01739491c_Cronus.jpg',
   nome:'Nome: Animal5',
-  descrição:'Animal qualquer'
-  ,
-habitos:'Hábitos: ',
+  descrição:'Animal qualquer',
+  habitos:'Hábitos: ',
 reproducao:'Reprodução: ',
-conservacao:'Conservação: '},
+conservacao:'Conservação: '
+  },
   {
-
+  imagem:'https://global-uploads.webflow.com/62f27b69eafac54f0255bab4/646c690ec939a9d01739491c_Cronus.jpg',
   nome:'Nome: Animal6',
   descrição:'Animal qualquer',
   habitos:'Hábitos: ',
@@ -102,6 +104,8 @@ conservacao:'Conservação: '},
       
       <Modal visible={visivel} animationType="fade">
         <View style={styles.modal}>
+          <Image style={styles.image} 
+          source={{uri:animal[indiceSelecionado].imagem}}/>
           <Text style={styles.animal}>{animal[indiceSelecionado].nome}</Text>
           <Text style={styles.animal}>{animal[indiceSelecionado].descrição}</Text>
           <Text style={styles.animal}>{animal[indiceSelecionado].habitos}</Text>
@@ -153,6 +157,12 @@ const styles = StyleSheet.create({
   },
   animal:{
     height:'100%'
+  },
+  image:{
+    width:'80%',
+    height:'50%',
+    alignSelf:'center',
+    margin:'5%'
   }
 
 });
