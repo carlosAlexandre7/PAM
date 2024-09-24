@@ -85,9 +85,8 @@ const styles = StyleSheet.create({
   buttonArea:{
     width:'50%',
     height:'100%',
-    borderWidth:1,
     marginLeft:'0.5%',
-    marginRight:'1%'
+    marginRight:'1.5%'
   },
   territorio:{
     width:'100%',
