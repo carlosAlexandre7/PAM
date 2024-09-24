@@ -9,28 +9,49 @@ export default function App() {
   
 const [animal,setAnimal] = useState([
   {
+  imagem:'https://global-uploads.webflow.com/62f27b69eafac54f0255bab4/646c690ec939a9d01739491c_Cronus.jpg',
   nome:'Nome: Animal1',
-  descrição:'Animal qualquer'
+  descrição:'Animal qualquer',
+  habitos:'Hábitos: ',
+  reproducao:'Reprodução: ',
+  conservacao:'Conservação: '
   },
   {
+  imagem:'https://global-uploads.webflow.com/62f27b69eafac54f0255bab4/646c690ec939a9d01739491c_Cronus.jpg',
   nome:'Nome: Animal2',
-  descrição:'Animal qualquer'
+  descrição:'Animal qualquer',
+  habitos:'Hábitos: ',
+  reproducao:'Reprodução: ',
+  conservacao:'Conservação: '
   },
   {
+  imagem:'https://global-uploads.webflow.com/62f27b69eafac54f0255bab4/646c690ec939a9d01739491c_Cronus.jpg',
   nome:'Nome: Animal3',
-  descrição:'Animal qualquer'
+  descrição:'Animal qualquer',
+  habitos:'Hábitos: ',
+  reproducao:'Reprodução: ',
+  conservacao:'Conservação: '
   },
   {
+  imagem:'https://global-uploads.webflow.com/62f27b69eafac54f0255bab4/646c690ec939a9d01739491c_Cronus.jpg',
   nome:'Nome: Animal4',
   descrição:'Animal qualquer'
   },
   {
+  imagem:'https://global-uploads.webflow.com/62f27b69eafac54f0255bab4/646c690ec939a9d01739491c_Cronus.jpg',
   nome:'Nome: Animal5',
-  descrição:'Animal qualquer'
+  descrição:'Animal qualquer',
+  habitos:'Hábitos: ',
+reproducao:'Reprodução: ',
+conservacao:'Conservação: '
   },
   {
+  imagem:'https://global-uploads.webflow.com/62f27b69eafac54f0255bab4/646c690ec939a9d01739491c_Cronus.jpg',
   nome:'Nome: Animal6',
-  descrição:'Animal qualquer'
+  descrição:'Animal qualquer',
+  habitos:'Hábitos: ',
+  reproducao:'Reprodução: ',
+  conservacao:'Conservação: '
   }
   ])
 
@@ -83,8 +104,13 @@ const [animal,setAnimal] = useState([
       
       <Modal visible={visivel} animationType="fade">
         <View style={styles.modal}>
+          <Image style={styles.image} 
+          source={{uri:animal[indiceSelecionado].imagem}}/>
           <Text style={styles.animal}>{animal[indiceSelecionado].nome}</Text>
           <Text style={styles.animal}>{animal[indiceSelecionado].descrição}</Text>
+          <Text style={styles.animal}>{animal[indiceSelecionado].habitos}</Text>
+          <Text style={styles.animal}>{animal[indiceSelecionado].reproducao}</Text>
+          <Text style={styles.animal}>{animal[indiceSelecionado].conservacao}</Text>
           <Button title="Voltar" onPress={() => voltar()}/>
           <Image source={require} style={{width:50, height:50}}/>
         </View>
@@ -96,13 +122,12 @@ const [animal,setAnimal] = useState([
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#828282',
     justifyContent:'center',
     alignItens:'center'
   },
   botaoArea:{
     flex:1,
-    backgroundColor:'red',
     width:'100%',
     height:'100%',
     alignItems:'center',
@@ -110,11 +135,11 @@ const styles = StyleSheet.create({
     
   },
   botao:{
-    backgroundColor:'blue',
     width:'95%',
     height:'85%',
     borderRadius:25,
     justifyContent:'center',
+    backgroundColor:'#545454'
   },
   header:{
     flex:0.5,
@@ -123,14 +148,21 @@ const styles = StyleSheet.create({
     textAlign:'center'
   },
   modal:{
+    margin:'5%',
     alignSelf:'center',
     justifyContent:'center',
     width:'95%',
     height:'95%',
-    backgroundColor:'red'
+    backgroundColor:'#828282'
   },
   animal:{
     height:'100%'
+  },
+  image:{
+    width:'80%',
+    height:'50%',
+    alignSelf:'center',
+    margin:'5%'
   }
 
 });
